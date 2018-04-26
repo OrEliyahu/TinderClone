@@ -17,6 +17,7 @@ public class ChooseLoginRegistrationActivity extends AppCompatActivity {
         mLogin = (Button) findViewById(R.id.login);
         mRegister = (Button) findViewById(R.id.register);
 
+
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

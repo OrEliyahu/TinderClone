@@ -118,6 +118,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             userInfo.put("sex", radioButton.getText().toString());
                             userInfo.put("profileImageUrl", "default");
                             userInfo.put("age",age);//todo our code check if its wort
+                            userInfo.put("type", "Person");//todo our code check if its wort
 
                             currentUserDb.updateChildren(userInfo);
                         }

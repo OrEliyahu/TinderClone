@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     private DatabaseReference usersDb;
 
+    private boolean isUser;
+
 
     ListView listView;
     List<cards> rowItems;
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUId = mAuth.getCurrentUser().getUid();
 
-        checkUserSex();
+        checkUserType();
 
         rowItems = new ArrayList<cards>();
 
@@ -126,26 +128,26 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private String userSex;
-    private String oppositeUserSex;
-    public void checkUserSex(){
+    private String userType;
+    private String oppositeUserType;
+    public void checkUserType(){
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference userDb = usersDb.child(user.getUid());
         userDb.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
-                    if (dataSnapshot.child("sex").getValue() != null){
-                        userSex = dataSnapshot.child("sex").getValue().toString();
-                        switch (userSex){
-                            case "Male":
-                                oppositeUserSex = "Female";
+                    if (dataSnapshot.child("type").getValue() != null){
+                        userType = dataSnapshot.child("type").getValue().toString();
+                        switch (userType){
+                            case "Person":
+                                oppositeUserType = "Event";
                                 break;
-                            case "Female":
-                                oppositeUserSex = "Male";
+                            case "Event":
+                                oppositeUserType = "Person";
                                 break;
                         }
-                        getOppositeSexUsers();
+                        getOppositeTypeUsers();
                     }
                 }
             }
@@ -156,12 +158,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void getOppositeSexUsers(){
+    public void getOppositeTypeUsers(){
         usersDb.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if (dataSnapshot.child("sex").getValue() != null) {
-                    if (dataSnapshot.exists() && !dataSnapshot.child("connections").child("nope").hasChild(currentUId) && !dataSnapshot.child("connections").child("yeps").hasChild(currentUId) && dataSnapshot.child("sex").getValue().toString().equals(oppositeUserSex)) {
+                if (dataSnapshot.child("type").getValue() != null) {
+                    if (dataSnapshot.exists() && !dataSnapshot.child("connections").child("nope").hasChild(currentUId) && !dataSnapshot.child("connections").child("yeps").hasChild(currentUId) && dataSnapshot.child("type").getValue().toString().equals(oppositeUserType)) {
                         String profileImageUrl = "default";
                         if (!dataSnapshot.child("profileImageUrl").getValue().equals("default")) {
                             profileImageUrl = dataSnapshot.child("profileImageUrl").getValue().toString();
