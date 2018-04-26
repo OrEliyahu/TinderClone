@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -39,6 +40,11 @@ public class RegistrationActivity extends AppCompatActivity {
     //********************************************************
     SeekBar seekBar;
     TextView valueText;
+    CheckBox checkBox1;
+    CheckBox checkBox2;
+    CheckBox checkBox3;
+    CheckBox checkBox4;
+    CheckBox checkBox5;
     //*******************************************************
 
     @Override
@@ -47,9 +53,15 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         //todo our code
         //********************************************************
+        checkBox1 = findViewById(R.id.checkbox1);
+        checkBox2 = findViewById(R.id.checkbox2);
+        checkBox3 = findViewById(R.id.checkbox3);
+        checkBox4 = findViewById(R.id.checkbox4);
+        checkBox5 = findViewById(R.id.checkbox5);
         seekBar= (SeekBar)findViewById(R.id.seek_bar1);
         valueText = (TextView)findViewById(R.id.ageValue1);
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
+        {
             @Override
             public void onProgressChanged(SeekBar seekBar,int progress, boolean b) {
                 valueText.setText(String.valueOf(progress));
@@ -65,6 +77,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
             }
         });
+
+
         //*******************************************************
 
 
@@ -111,14 +125,32 @@ public class RegistrationActivity extends AppCompatActivity {
                         if(!task.isSuccessful()){
                             Toast.makeText(RegistrationActivity.this, "sign up error", Toast.LENGTH_SHORT).show();
                         }else{
+                            String location = "";
+                            if (checkBox1.isChecked()){
+                                location = "North";
+                            }
+                            if (checkBox2.isChecked()){
+                                location = "Haifa";
+                            }
+                            if (checkBox3.isChecked()){
+                                location = "Center";
+                            }
+                            if (checkBox4.isChecked()){
+                                location = "Jerusalem";
+                            }
+                            if (checkBox5.isChecked())
+                            {
+                                location = "South";
+                            }
                             String userId = mAuth.getCurrentUser().getUid();
                             DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Users").child(userId);
                             Map userInfo = new HashMap<>();
                             userInfo.put("name", name);
                             userInfo.put("sex", radioButton.getText().toString());
                             userInfo.put("profileImageUrl", "default");
-                            userInfo.put("age",age);//todo our code check if its wort
-                            userInfo.put("type", "Person");//todo our code check if its wort
+                            userInfo.put("age",age);
+                            userInfo.put("type", "Person");
+                            userInfo.put("location",location);
 
                             currentUserDb.updateChildren(userInfo);
                         }
