@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1026093477807",
+    "firebase_url": "https://love2give-13345.firebaseio.com",
+    "project_id": "love2give-13345",
+    "storage_bucket": "love2give-13345.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026093477807:android:fee5e5226bc210f0",
+        "android_client_info": {
+          "package_name": "com.simcoder.tinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026093477807-mkodouhghf1p4hl3uhu0dg50678geo36.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2soOOW7mZ_yACsU6A_zWiVP8lQRvAswA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
