@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Tinder</string>
+    <string-array name="locations">
+        <item>North</item>
+        <item>Haifa</item>
+        <item>Center</item>
+        <item>Jerusalem</item>
+        <item>South</item>
+    </string-array>
 </resources>
