@@ -1,14 +1,12 @@
 package com.simcoder.tinder.Matches;
 
-/**
- * Created by manel on 10/31/2017.
- */
+import android.support.v7.app.AppCompatActivity;
 
-public class MatchesObject {
-    public String userId;
+public class EventGroupObject extends AppCompatActivity {
+    private String userId;
     private String name;
     private String profileImageUrl;
-    public MatchesObject (String userId, String name, String profileImageUrl){
+    public EventGroupObject (String userId, String name, String profileImageUrl){
         this.userId = userId;
         this.name = name;
         this.profileImageUrl = profileImageUrl;
