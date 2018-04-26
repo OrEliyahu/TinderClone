@@ -7,32 +7,30 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.simcoder.tinder.Chat.ChatActivity;
 import com.simcoder.tinder.R;
 
 /**
  * Created by manel on 10/31/2017.
  */
 
-public class MatchesViewHolders extends RecyclerView.ViewHolder implements View.OnClickListener{
-    public TextView mMatchId, mMatchName;
-    public ImageView mMatchImage;
-    public MatchesViewHolders(View itemView) {
+public class EventsGroupViewHolders extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public TextView mEventId, mEventName;
+    public ImageView mEventImage;
+    public EventsGroupViewHolders(View itemView) {
         super(itemView);
         itemView.setOnClickListener(this);
 
-        mMatchId = (TextView) itemView.findViewById(R.id.Matchid);
-        mMatchName = (TextView) itemView.findViewById(R.id.MatchName);
+        mEventId = (TextView) itemView.findViewById(R.id.Matchid);
+        mEventName = (TextView) itemView.findViewById(R.id.MatchName);
 
-        mMatchImage = (ImageView) itemView.findViewById(R.id.MatchImage);
+        mEventImage = (ImageView) itemView.findViewById(R.id.MatchImage);
     }
 
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(view.getContext(), EventGroupActivity.class);
         Bundle b = new Bundle();
-        b.putString("matchId", mMatchId.getText().toString());
-        b.putString("key", mMatchId.getText().toString());
+        b.putString("matchId", mEventId.getText().toString());
         intent.putExtras(b);
         view.getContext().startActivity(intent);
     }
