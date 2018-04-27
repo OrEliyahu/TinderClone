@@ -35,7 +35,7 @@ public class EventGroupAdapter extends RecyclerView.Adapter<EventGroupViewHolder
 
     @Override
     public void onBindViewHolder(EventGroupViewHolders holder, int position) {
-        holder.mMatchId.setText(matchesList.get(position).getUserId());
+        holder.mMatchId.setText("");
         holder.mMatchName.setText(matchesList.get(position).getName());
         if(!matchesList.get(position).getProfileImageUrl().equals("default")){
             Glide.with(context).load(matchesList.get(position).getProfileImageUrl()).into(holder.mMatchImage);

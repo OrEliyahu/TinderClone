@@ -6,10 +6,15 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="checkedTextViewStyle"></item>
     </style>
     <style name="CustomText">
         <item name="android:textSize">3sp</item>
         <item name="android:textStyle">italic</item>
+    </style>
+    <style name="UnderLine">
+        <item name="colorControlActivated">#FFFFFF</item>
+        <item name="colorControlNormal">#FFFFFF</item>
     </style>
 
 </resources>

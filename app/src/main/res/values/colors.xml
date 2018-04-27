@@ -6,4 +6,5 @@
     <color name="colorPrimaryDark">#1478BB</color>
     <color name="colorAccent">#FF4081</color>
     <color name="btcolor">#FFFFFF</color>
+    <color name="registerColor">#E91E63</color>
 </resources>

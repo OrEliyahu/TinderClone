@@ -3,6 +3,7 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -10,10 +11,20 @@
         android:layout_height="match_parent"
         tools:context="com.simcoder.tinder.RegistrationActivity"
         android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/asset_1" />
+        </RelativeLayout>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="name"
+            android:hint="Name"
             android:id="@+id/name"/>
         <RadioGroup
             android:layout_width="match_parent"
@@ -22,19 +33,28 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Male" />
+                android:text="Male"
+                android:textColor="@color/registerColor" />
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/registerColor"
                 android:text="Female" />
 
         </RadioGroup>
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="age"
+            android:layout_marginTop="10dp"
+            android:text="Age"
+            android:textColor="@color/registerColor"
             android:textSize="16dp"
+            android:layout_marginLeft="14dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="10dp"
             android:textColor="@android:color/holo_blue_dark"
             android:layout_marginLeft="13dp"
             />
@@ -42,6 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
+            android:layout_marginHorizontal="100dp"
             android:layout_marginLeft="13dp"
             android:id="@+id/ageValue1"/>
 
@@ -56,6 +77,7 @@
             android:text="Location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:id="@+id/location"
             />
         <LinearLayout
@@ -70,6 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="North"
+                android:textColor="@color/registerColor"
                 android:gravity="top"
                 android:paddingLeft="0sp"
                 android:layout_marginBottom="8sp"
@@ -80,6 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Haifa"
+                android:textColor="@color/registerColor"
                 android:gravity="top"
                 android:paddingLeft="0sp"
                 android:layout_marginBottom="8sp"
@@ -91,6 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Center"
+                android:textColor="@color/registerColor"
                 android:gravity="top"
                 android:paddingLeft="0sp"
                 android:layout_marginBottom="8sp"
@@ -102,6 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Jerusalem"
+                android:textColor="@color/registerColor"
                 android:gravity="top"
                 android:paddingLeft="0sp"
                 android:layout_marginBottom="8sp"
@@ -113,6 +139,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="South"
+                android:textColor="@color/registerColor"
                 android:gravity="top"
                 android:paddingLeft="0sp"
                 android:layout_marginBottom="8sp"
@@ -122,19 +149,23 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="email"
+            android:hint="Email"
             android:id="@+id/email"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="password"
+            android:hint="Password"
             android:id="@+id/password"/>
 
         <Button
             android:id="@+id/register"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="100dp"
+            android:layout_centerInParent="true"
             android:layout_marginTop="25dp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/rounded_button"
             android:text="Register" />
     </LinearLayout>
 </ScrollView>

@@ -12,15 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".ChooseLoginRegistrationActivity">
+        <activity android:name=".ChooseLoginRegistrationActivity"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegistrationActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegistrationActivity"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".LoginActivity"
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".SettingsActivity" />
         <activity android:name=".Matches.MatchesActivity" />
         <activity android:name=".Chat.ChatActivity" />

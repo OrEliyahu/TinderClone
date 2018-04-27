@@ -7,7 +7,18 @@
     tools:context="com.simcoder.tinder.SettingsActivity"
     android:orientation="vertical"
     android:padding="20sp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/asset_1" />
+    </RelativeLayout>
     <ImageView
+        android:layout_marginTop="20dp"
         android:layout_width="100sp"
         android:layout_height="100sp"
         android:id="@+id/profileImage"
