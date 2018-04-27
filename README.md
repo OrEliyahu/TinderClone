@@ -1,5 +1,14 @@
 # Tinder_android_app_clone
 
+Link to FireBase:
+https://console.firebase.google.com/u/0/project/love2give-13345/database/love2give-13345/data/Users/aQsDYNt8kChFNxNv5HGEip64e9n1
+
+
+
+
+
+
+
 ▷ Create an android app like tinder
 
 ▷ Full Video Tutorial Playlist here: https://www.youtube.com/playlist?list=PLxabZQCAe5fio9dm1Vd0peIY6HLfo5MCf
