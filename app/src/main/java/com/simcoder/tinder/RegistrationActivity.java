@@ -1,6 +1,7 @@
 package com.simcoder.tinder;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -51,6 +52,10 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+        Button button4 = (Button) findViewById(R.id.register);
+        Typeface typeface = Typeface.createFromAsset(getAssets(),"Raleway-Light.ttf");
+        button4.setText("Login");
+        button4.setTypeface(typeface);
         //todo our code
         //********************************************************
         checkBox1 = findViewById(R.id.checkbox1);

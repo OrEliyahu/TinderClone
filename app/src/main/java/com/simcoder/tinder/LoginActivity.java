@@ -1,6 +1,7 @@
 package com.simcoder.tinder;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,7 +27,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        Button button3 = (Button) findViewById(R.id.login3);
+        Typeface typeface = Typeface.createFromAsset(getAssets(),"Raleway-Light.ttf");
+        button3.setText("Login");
+        button3.setTypeface(typeface);
         mAuth = FirebaseAuth.getInstance();
         firebaseAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -42,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         };
 
 
-        mLogin = (Button) findViewById(R.id.login);
+        mLogin = (Button) findViewById(R.id.login3);
 
         mEmail = (EditText) findViewById(R.id.email);
         mPassword = (EditText) findViewById(R.id.password);
