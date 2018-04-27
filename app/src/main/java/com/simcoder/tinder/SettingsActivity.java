@@ -8,12 +8,16 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.cloudinary.android.MediaManager;
+import com.cloudinary.android.callback.ErrorInfo;
+import com.cloudinary.android.callback.UploadCallback;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -179,12 +183,43 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, final int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 1 && resultCode == Activity.RESULT_OK){
             final Uri imageUri = data.getData();
             resultUri = imageUri;
             mProfileImage.setImageURI(resultUri);
+
+            String requestId = MediaManager.get().upload(imageUri).callback(new UploadCallback() {
+                @Override
+                public void onStart(String requestId) {
+                    // your code here
+                }
+                @Override
+                public void onProgress(String requestId, long bytes, long totalBytes) {
+                    // example code starts here
+                    Double progress = (double) bytes/totalBytes;
+                    // post progress to app UI (e.g. progress bar, notification)
+                    // example code ends here
+                }
+                @Override
+                public void onSuccess(String requestId, Map resultData) {
+                    // your code here
+
+                    Log.d("ddd",resultData.get("url").toString());
+                }
+                @Override
+                public void onError(String requestId, ErrorInfo error) {
+                    // your code here
+                }
+                @Override
+                public void onReschedule(String requestId, ErrorInfo error) {
+                    // your code here
+                }}).unsigned("profile")
+                    .dispatch();
+
+
+
         }
     }
 }

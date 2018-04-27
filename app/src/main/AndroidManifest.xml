@@ -25,6 +25,10 @@
         <activity android:name=".Matches.MatchesActivity" />
         <activity android:name=".Chat.ChatActivity" />
         <activity android:name=".Matches.EventGroupActivity"></activity>
+
+        <meta-data
+            android:name="CLOUDINARY_URL"
+            android:value="cloudinary://@love2give"/>
     </application>
 
 </manifest>
